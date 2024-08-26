@@ -1,0 +1,11 @@
+#!/bin/sh
+
+    echo
+    echo "*** Pulling changes into Prime for you now! [Hub's post-update hook]"
+    echo
+
+    cd $HOME/snuppies.co/www || exit
+    unset GIT_DIR
+    git pull hub main
+
+    exec git-update-server-info
